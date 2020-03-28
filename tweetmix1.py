@@ -21,7 +21,7 @@ with open('sarcasm_user_embedding_tweets.ids', 'r') as f:
 			x={va:status}
 			y=json.dumps(x)
 			f1.writelines(y+'\n')
-		except:
+		except tweepy.error.TweepError:
 			print("Error for{}".format(va))
 			
 	f1.close()	
